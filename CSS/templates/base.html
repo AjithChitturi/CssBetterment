@@ -93,23 +93,6 @@ body{
 
   {% block css %}{% endblock css %}
 
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K454E5WP4W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-K454E5WP4W');
-</script>
-
-<!-- Amplitude tag (atag.js) -->
-<script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script>
-<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.8.0-min.js.gz"></script>
-<script>window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('3d6faf47b33c72d1b8c260f2504385e8', {"autocapture":{"elementInteractions":true}});</script>
-
-  
 </head>
 
 <body>
@@ -127,14 +110,14 @@ body{
             </a>
         </div>
         <div class = "shopHeader" style = "display:flex; justify-content:center;gap:50px;color:#d45829;">
-            <a href="{% url 'shop_products' %}?gender=Men" style = "text-decoration: none;margin-right:0.5%;">Men</a>
-            <a href="{% url 'shop_products' %}?gender=Women" style = "text-decoration: none;margin-right:0.5%">Women</a>
-            <a href="{% url 'shop_products' %}?gender=Kids" style = "text-decoration: none;">Kids</a>
+            <a href="#" style = "text-decoration: none;margin-right:0.5%;">Men</a>
+            <a href="#" style = "text-decoration: none;margin-right:0.5%">Women</a>
+            <a href="#" style = "text-decoration: none;">Kids</a>
 
         </div>
         <div class="nav-bottom">
             <div class="search-container">
-                <form id="search-form" action="{% url 'search' %}" method="POST">
+                <form id="search-form" action=""#"" method="POST">
                     {% csrf_token %}
                     <input type="text" id="search-input" name="result" placeholder="Search...">
                     <img src="{% static 'search.svg' %}" alt="Search" onclick="document.getElementById('search-form').submit()" loading="lazy">
@@ -143,7 +126,7 @@ body{
         </div>
         <div class="svg">
             <div class="wishlist">
-                <a href="{% url 'view_wishlist' %}" id="wishlist-img">
+                <a href="#" id="wishlist-img">
                     {% if request.path == '/view_wishlist' %}
                         <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 48; color:#d45829;" >favorite</span>
                     {% else %}
@@ -167,7 +150,7 @@ body{
                 <div class="cart-count">{{ cart_count }}</div>
             {% endif %}
             <div class = "profileNavHeader">
-                <a href="{% url "user_profile" %}" id = "homeImgHeader"> 
+                <a href="#" id = "homeImgHeader"> 
                     {% if request.path == '/user_profile' %}
                     <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 48; color:#d45829;" id = "fillProfile" style="inline-block;">person</span>
                     {% else %}
@@ -177,35 +160,9 @@ body{
             </div>
         </div>
        
-        <!-- It contains user profile and its dropdown -->
-        {% comment %} <div class="user">
-            {% if request.user.is_authenticated %}
-                <img src="{% static 'profile.svg' %}" alt="Profile" id="profileIcon" onmouseover="showDropdown('profileDropdown')" onmouseout="hideDropdown('profileDropdown')" loading="lazy"/>
-                <span id = "username1">{{ request.user.username }}</span>
-                <div class="dropdown-user" id="profileDropdown" onmouseover="showDropdown('profileDropdown')" onmouseout="hideDropdown('profileDropdown')">
-                    <div class="user-info">
-                        <p>Hello, <strong>{{ request.user.username }}</strong><br /></p>
-                    </div>
-                    <a href="{% url 'user_profile' %}" class="profile-btn">Your Profile</a>
-                    <a href="{% url 'previous_order' %}">Previous Orders</a>
-                    <a href="{% url 'viewcart' %}">Cart</a> 
-                    <a href="{% url 'view_wishlist' %}">Wishlist</a>
-                    <a href="{% url 'completed_bids' %}">Completed Bids</a>
-                    <!-- <a href="/manage_address">Manage Address</a> -->
-                    <a href="{% url 'contact' %}">Contact Us</a>
-                    <a href="{% url 'signout' %}">Logout</a>
-                </div>
-            {% else %}
-                <img src="{% static 'profile.svg' %}" alt="Profile" id="profileIcon" onmouseover="showDropdown('profileDropdown')" onmouseout="hideDropdown('profileDropdown')" loading="lazy"/>
-                <a href="{% url 'login_page' %}" class="signin-btn">Sign In</a>
-            {% endif %}
-        </div>
-    </div> {% endcomment %}
-
-    <!-- Search bar -->
     <div class="nav-center">
         <ul>
-            <form id="category-form" action="{% url 'shop_products' %}" method="GET">
+            <form id="category-form" action="#" method="GET">
                 <input type="hidden" name="gender" id="gender-input" value="">
                 <ul class="menu">
            
@@ -336,125 +293,14 @@ body{
                     </div>
                 </div>
             </li>  
-            <li><a href="{% url 'shop' %}">Shop</a></li>
+            <li><a href="#">Shop</a></li>
         </ul>
     </form>
     
-    {% comment %} <li><a href="{% url 'bid_order' %}">Bid Order</a></li> {% endcomment %}
 </ul>
 </div>
     
 
-    
-<!-- Hamburger Menu -->
-
-
-<!-- Dropdown Menu for smaller screens -->
-<!-- <div class="hamburger-menu" id="hamburger-menu">
-
-  <ul class="menu">
-    <span class="close-btn" id="closeBtn">×</span>
-      <li class="menu-item menu-men">
-          <a href="#" class="menu-link" 
-             onmouseover="showDropdown('menDropdown')" 
-             onmouseout="hideDropdown('menDropdown')" 
-             onclick="submitCategory('Men','Null'); return false;">Men</a>
-          <div id="menDropdown" class="dropdown" 
-               onmouseover="showDropdown('menDropdown')" 
-               onmouseout="hideDropdown('menDropdown')">
-              <div class="dropdown-column">
-                  <h3>Topwear</h3>
-                  <ul>
-                    <li><a href="#" onclick="submitCategory('Men','Fusion Blazers'); return false;">Fusion Blazers</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','Casual Shirts'); return false;">Casual Shirts</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','Formal Shirts'); return false;">Formal Shirts</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','T-Shirts'); return false;">T-Shirts</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','Blazers & Suits'); return false;">Blazers & Suits</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','Jackets & Hoodies'); return false;">Jackets & Hoodies</a></li>
-                  </ul>
-              </div>
-              <div class="dropdown-column">
-                  <h3>Bottom Wear</h3>
-                  <ul>
-                      <li><a href="#" onclick="submitCategory('Men','Jeans'); return false;">Jeans</a></li>
-                      <li><a href="#" onclick="submitCategory('Men','Trousers'); return false;">Trousers</a></li>
-                  </ul>
-              </div>
-              <div class="dropdown-column">
-                  <h3>Indian Wear</h3>
-                  <ul>
-                    <li><a href="#" onclick="submitCategory('Men','Kurtas (Short Kurtas)'); return false;">Kurtas (Short Kurtas)</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','Kurtas (Long Kurtas)'); return false;">Kurtas (Long Kurtas)</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','Pathani Suits'); return false;">Pathani Suits</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','Bandhgalas'); return false;">Bandhgalas</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','Jodhpuri Suits'); return false;">Jodhpuri Suits</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','Kurta Pajama Sets'); return false;">Kurta Pajama Sets</a></li>
-                    <li><a href="#" onclick="submitCategory('Men','Dhoti Kurta'); return false;">Dhoti Kurta</a></li>
-                  </ul>
-              </div>
-          </div>
-      </li>
-      <li class="menu-item menu-women">
-          <a href="#" class="menu-link" 
-             onclick="showDropdown('womenDropdown')" 
-             onclick="hideDropdown('womenDropdown')" 
-             onclick="submitCategory('Women','Null'); return false;">Women</a>
-          <div id="womenDropdown" class="dropdown" 
-               onclick="showDropdown('womenDropdown')" 
-               onclick="hideDropdown('womenDropdown')">
-              <div class="dropdown-column">
-                  <h3>Western Wear</h3>
-                  <ul>
-                    <li><a href="#" onclick="submitCategory('Women','Crop-Tops'); return false;">Crop-Tops</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Tops & Blouses'); return false;">Tops & Blouses</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Saree Gowns'); return false;">Saree Gowns</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Fusion Jumpsuits'); return false;">Fusion Jumpsuits</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Kurtis with Skirts'); return false;">Kurtis with Skirts</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Kurtis with Jeans'); return false;">Kurtis with Jeans</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Dhoti Pants with Tops'); return false;">Dhoti Pants with Tops</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Jackets & Blazers'); return false;">Jackets & Blazers</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Jumpsuits & Playsuits'); return false;">Jumpsuits & Playsuits</a></li>
-                  </ul>
-              </div>
-              <div class="dropdown-column">
-                  <h3>Bottom Wear</h3>
-                  <ul>
-                    <li><a href="#" onclick="submitCategory('Women','Lehengas'); return false;">Lehengas</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Salwar Suits'); return false;">Salwar Suits</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Anarkali Suits'); return false;">Anarkali Suits</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Palazzo Suits'); return false;">Palazzo Suits</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Sharara & Gharara Sets'); return false;">Sharara & Gharara Sets</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Jeans'); return false;">Jeans</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Skirts'); return false;">Skirts</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Trousers & Pants'); return false;">Trousers & Pants</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Palazzos'); return false;">Palazzos</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Kurti with Palazzo'); return false;">Kurti with Palazzo</a></li>
-                  </ul>
-              </div>
-              <div class="dropdown-column">
-                  <h3>Indian Wear</h3>
-                  <ul>
-                    <li><a href="#" onclick="submitCategory('Women','Kurtis'); return false;">Kurtis</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Lehengas'); return false;">Lehengas</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Sarees'); return false;">Sarees</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Salwar Suits'); return false;">Salwar Suits</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Anarkali Suits'); return false;">Anarkali Suits</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Palazzo Suits'); return false;">Palazzo Suits</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Sharara & Gharara Sets'); return false;">Sharara & Gharara Sets</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Dupattas'); return false;">Dupattas</a></li>
-                    <li><a href="#" onclick="submitCategory('Women','Fusion Lehengas'); return false;">Fusion Lehengas</a></li>
-                  </ul>
-              </div>
-          </div>
-        </li>
-      <li class = "menu-item"><a href="{% url 'shop_products' %}?gender=Men">Men</a></li>
-      <li class = "menu-item"><a href="{% url 'shop_products' %}?gender=Women">Women</a></li>
-      <li class = "menu-item"><a href="{% url 'shop' %}" class = "menu-link">Products</a></li>
-
-      <li class = "menu-item"><a href="{% url 'about' %}" class = "menu-link">About us</a></li>
-      {% comment %} <li><a href="{% url 'bid_order' %}" class = "menu-link">Bid Order</a></li> {% endcomment %}
-  </ul>
-</div> -->
 <div class="hamburger-menu" id="hamburger-menu">
     <a href="{% url "landing_page" %}">
     <div class = "relative w-full h-[25%] rounded-[10px] bg-cover " style = "background-image: url('{% static "landingPage3.jpeg" %}');">
@@ -464,16 +310,16 @@ body{
     </a>
  
     <ul class="menu flex gap-6 flex-col my-5 mx-3">
-         <li class="border-b-2 border-solid border-gray-300 pb-2"><a href="{% url 'shop_products' %}?gender=Men">Men</a></li>
-         <li class="border-b-2 border-solid border-gray-300 pb-2"><a href="{% url 'shop_products' %}?gender=Women">Women</a></li>
-        <li class="border-b-2 border-solid border-gray-300 pb-2"><a href="{% url 'shop_products' %}?gender=Kids">Kids</a></li>
-       <li class="border-b-2 border-solid border-gray-300 pb-2"><a href="{% url "blog" %}">Blogs</a></li>
+         <li class="border-b-2 border-solid border-gray-300 pb-2"><a href="#">Men</a></li>
+         <li class="border-b-2 border-solid border-gray-300 pb-2"><a href="#">Women</a></li>
+        <li class="border-b-2 border-solid border-gray-300 pb-2"><a href="#">Kids</a></li>
+       <li class="border-b-2 border-solid border-gray-300 pb-2"><a href="#">Blogs</a></li>
        {% comment %} <li class="border-b-2 border-solid border-gray-300 pb-2"><a href="{% url "contact" %}">Contact Us</a></li> {% endcomment %}
        <li class="border-b-2 border-solid border-gray-300 pb-2">
          {% if user.is_authenticated %}
-           <a href="{% url 'signout' %}">Sign Out</a>
+           <a href="#">Sign Out</a>
          {% else %}
-           <a href="{% url 'login_page' %}">Sign In</a>
+           <a href="#">Sign In</a>
          {% endif %}
        </li>
        
@@ -548,7 +394,7 @@ body{
         
     </div>
     <div class = "shopNav">
-        <a href="{% url "shop" %}" id = "homeImg"> 
+        <a href="#" id = "homeImg"> 
             
             {% if request.path == '/shop' %}
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 48;" id="fillShop">add_business</span>
@@ -561,38 +407,38 @@ body{
                 </a> 
     </div>
     <div class = "bidNav">
-        <a href="{% url "bid_order" %}" id = "homeImg"> 
+        <a href="#" id = "homeImg"> 
             {% if request.path == '/bid_order' %}
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 48;" id = "fillBid">gavel</span>
             {% else %}
                     <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48;">gavel</span>
                 {% endif %}
             </a> 
-            <a href="{% url "bid_order" %}"> 
+            <a href="#"> 
                 <p>Bid</p> 
                 </a> 
     </div>
     <div class = "cartNav">
-        <a href="{% url "viewcart" %}" id = "homeImg"> 
+        <a href="#" id = "homeImg"> 
             {% if request.path == '/viewcart' %}
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 48;" id = "fillShopping">shopping_cart</span>
             {% else %}
                     <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48;">shopping_cart</span>
                 {% endif %}
             </a> 
-            <a href="{% url "viewcart" %}"> 
+            <a href="#"> 
                 <p>Cart</p> 
                 </a> 
     </div>
     <div class = "profileNav">
-        <a href="{% url "user_profile" %}" id = "homeImg"> 
+        <a href="#" id = "homeImg"> 
             {% if request.path == '/user_profile' %}
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 48;" id = "fillProfile">person</span>
             {% else %}
                     <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48;">person</span>
                 {% endif %}
             </a> 
-            <a href="{% url "user_profile" %}"> 
+            <a href="#"> 
                 <p>Profile</p> 
                 </a>     
     </div>
@@ -603,16 +449,16 @@ body{
     <table class = "w-[98%] ml-[1%] mr-[1%] mt-[5%] mb-[5%]">
         <tbody>
             <tr>
-                <td style = " border:1px solid white; border-top:1px solid #3d3a3a; "><a href="{% url 'shipping_delivery' %}">Payment</a></td>
-                <td style = " border:1px solid white; border-top:1px solid #3d3a3a;"><a href="{% url 'privacy_policy' %}">Privacy Policy</a></td>
-                <td style = " border:1px solid white; border-top:1px solid #3d3a3a;"><a href="{% url 'shipping_delivery' %}">Shipping</a></td>
-                <td style = " border:1px solid white; border-top:1px solid #3d3a3a;"><a href="{% url 'terms_conditions' %}">Terms of Services</a></td>
+                <td style = " border:1px solid white; border-top:1px solid #3d3a3a; "><a href="#">Payment</a></td>
+                <td style = " border:1px solid white; border-top:1px solid #3d3a3a;"><a href="#">Privacy Policy</a></td>
+                <td style = " border:1px solid white; border-top:1px solid #3d3a3a;"><a href="#">Shipping</a></td>
+                <td style = " border:1px solid white; border-top:1px solid #3d3a3a;"><a href="#">Terms of Services</a></td>
             </tr>
             <tr>
-                <td style = "  border:1px solid white; border-bottom:1px solid #3d3a3a;"><a href="{% url 'contact' %}">Contact Us</a></td>
-                <td style = " border:1px solid white; border-bottom:1px solid #3d3a3a;"><a href="{% url "about" %}">About Us</a></td>
-                <td style = " border:1px solid white; border-bottom:1px solid #3d3a3a;"><a href="{% url 'cancellation_refund' %}">Exchange Policy</a></td>
-                <td style = " border:1px solid white; border-bottom:1px solid #3d3a3a;"><a href="{% url 'cancellation_refund' %}">Returns/Refunds</a></td>
+                <td style = "  border:1px solid white; border-bottom:1px solid #3d3a3a;"><a href="#">Contact Us</a></td>
+                <td style = " border:1px solid white; border-bottom:1px solid #3d3a3a;"><a href="#">About Us</a></td>
+                <td style = " border:1px solid white; border-bottom:1px solid #3d3a3a;"><a href="#">Exchange Policy</a></td>
+                <td style = " border:1px solid white; border-bottom:1px solid #3d3a3a;"><a href="#">Returns/Refunds</a></td>
             </tr>
         </tbody>
     </table>
@@ -624,86 +470,7 @@ body{
 
 </footer>
 
-{% comment %}
-<!-- Footer -->
-<footer>
-  <div class="footer-container">
-      <div class="footer-column">
-          <button class="footer-toggle" onclick="toggleSection('customer-support')"><span>CUSTOMER SUPPORT </span><span id="down-mark">&#9660;</span></button>
-          <div id="customer-support" class="footer-content">
-              <p>Call/WhatsApp:  +91 97043 87878</p>
-              <p>Timings: 11AM - 8PM IST | Monday - Sunday</p>
-              <p>Email: <a href="mailto:team@vasstr.com">team@vasstr.com</a></p>
-          </div>
-      </div>
-      
-      <div class="footer-column">
-          <button class="footer-toggle" onclick="toggleSection('stay-connected')"><span>STAY CONNECTED</span> <span id="down-mark">&#9660;</span></button>
-          <div id="stay-connected" class="footer-content">
-              <p>Subscribe to our newsletters</p>
-              <form>
-                  <input type="email" placeholder="Enter your email">
-                  <button type="submit">&#9993;</button>
-              </form>
-              <div class="social-icons">
-                  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              </div>
-          </div>
-      </div>
 
-      <div class="footer-column" id = "footerColumn3">
-          <ul>
-              <li><a href="#">Search</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="{% url 'privacy_policy' %}">Privacy Policy</a></li>
-              <li><a href="{% url 'terms_conditions' %}">Terms of Service</a></li>
-              <li><a href="{% url 'shipping_delivery' %}">Payments & Shipping</a></li>
-              <li><a href="{% url 'cancellation_refund' %}">Return/Refund & Exchange Policy</a></li>
-              <li><a href="#">Contact Us</a></li>
-          </ul>
-      </div>
-  </div>
-  <br>
-  <br>
-  <br>
-</footer>
-{% endcomment %}
-  {% comment %} <footer>
-    <div class="footer-container">
-      
-      <div class="footer-main">
-        <div class="footer-logo" >
-          <img src="{% static 'designhub-logo.png' %}" alt="DesignHub Logo" loading="lazy"/> 
-          <h2> FASHNEX</h2>
-        </div>
-        <div class="footer-links">
-          <a href="{% url "about" %}">About us</a>
-          <a href="#">Help Center</a>
-          <a href="{% url 'contact' %}">Contact us</a>
-          <a href="#">FAQs</a>
-          <a href="#">Careers</a>
-        </div>
-        
-      </div>
-  
-      <div class="footer-bottom">
-        <div class="language-button-div" style = "display:flex;height : 30px;width : 100px;align-items:center;justify-content: center; border : 0.5px solid white" >English</div>
-        <p style = "margin : 0px">© 2022 Brand, Inc. • <a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Sitemap</a></p>
-        <div class="social-media" style = "width: 100px; display:flex;justify-content: space-evenly;">
-          <a href="https://x.com/i/flow/login"><i class="fa-brands fa-twitter" style = "color:white;"></i></a>
-          <a href="https://www.facebook.com/login/"><i class="fa-brands fa-facebook" style = "color:white;"></i></a>
-          <a href="https://api.linkedin.com/login"><i class="fa-brands fa-linkedin" style = "color:white;"></i></a>
-          <a href="https://www.youtube.com/account"><i class="fa-brands fa-youtube" style = "color:white;"></i></a>
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <br>
-
-  </footer> {% endcomment %}
   <script>
   document.getElementById('search-input').addEventListener('input', function() {
     let query = this.value;

@@ -30,14 +30,14 @@ Update `tailwind.config.js` to include the following:
 ```js
 module.exports = {
   content: [
-    './website/home/templates/**/*.html',
-    './website/static/js/**/*.js',
+    './CssBetterment/CSS/templates/**/*.html', // Match all HTML templates in your Django app
+    './CssBetterment/static/js/**/*.js',   // Match JavaScript files in your static folder
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-};
+}
 ```
 
 #### 5. Create a Tailwind CSS File
@@ -51,7 +51,7 @@ Inside your static CSS folder, create `tailwind.css` and add:
 #### 6. Configure Build Script in `package.json`
 Add the following inside the `scripts` section:
 ```json
-"build:css": "npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/output.css --watch"
+"build:css": "npx tailwindcss -i ./CssBetterment/static/css/tailwind.css -o ./CssBetterment/static/css/output.css --watch"
 ```
 
 #### 7. Build Tailwind CSS

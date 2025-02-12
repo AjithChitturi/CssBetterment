@@ -1,0 +1,562 @@
+{% extends "base.html" %}
+{% block title %}Vasstr{% endblock title %}
+{% load static %}
+{% block css %}
+<!-- <link rel="stylesheet" href={% static 'css/landing_page.css' %}> -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<link href="{% static 'css/output.css' %}" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+{% endblock css %}
+{% block meta %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore Vasstr for customized and personalized designer apparel. Shop unique outfits tailored to your style, with a wide selection of high-quality, fashionable clothing.">
+<meta name="keywords" content="Shopping, Apparel, Online Shopping, Designer Wear, Customized Outfits, Personalized Clothing, Fashion, Tailored Clothing, Unique Designs, Fashion Marketplace, Custom Apparel, Fashion Artisans">
+<meta name="author" content="INIKRU Technologies Private Limited">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Vasstr - Custom Designer Outfits and Personalized Apparel">
+<meta property="og:description" content="Discover unique, custom-made designer outfits at Vasstr. Shop tailored clothing for men, women, and kids. Personalized styles just for you.">
+<meta property="og:image" content="{% static 'images/og-image.jpg' %}">
+<meta property="og:url" content="https://www.vasstr.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vasstr - Fashion Customization Marketplace">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vasstr - Customized and Personalized Apparel">
+<meta name="twitter:description" content="Explore customized, designer apparel at Vasstr. Shop personalized outfits for any occasion. Tailored clothing for men, women, and kids.">
+<meta name="twitter:image" content="{% static 'images/twitter-image.jpg' %}">
+<meta name="twitter:site" content="@VasstrOfficial">
+<meta name="twitter:creator" content="@AjithChitturi">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#ff6347">
+<meta name="apple-mobile-web-app-title" content="Vasstr - Custom Apparel">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="google-site-verification" content="your-google-site-verification-code">
+<meta name="p:domain_verify" content="your-pinterest-domain-verification-code">
+<meta property="article:published_time" content="2024-12-03T00:00:00+00:00">
+<meta property="article:modified_time" content="2024-12-03T00:00:00+00:00">
+<meta property="og:updated_time" content="2024-12-03T00:00:00+00:00">
+<meta name="robots" content="index, follow">
+<meta name="format-detection" content="telephone=no">
+<meta name="facebook-domain-verification" content="your-facebook-domain-verification-code">
+<meta name="msvalidate.01" content="your-bing-site-verification-code">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="googlebot" content="index, follow">
+<meta name="googlebot-news" content="index, follow">
+<meta name="googlebot-image" content="index, follow">
+{% endblock meta %}
+
+
+{% block body %}
+<div class="body font-balthazar bg-[#f7f5f2]">
+  {% load static %}
+  <div id="carousel" class="carousel hidden sm:flex">
+    <div class="carousel-slide w-full h-[600px]">
+      <img src="{% static 'laptop1.jpeg' %}" alt="Fashion Image 1" class="w-full h-full object-cover" loading="lazy">
+            {% comment %} <h2 class = "carousel-text"><p>⁠Where Fashion Meets Personalization</p>
+
+              At Vasstr, we believe fashion is a reflection of your individuality. Choose from a variety of designs and personalize them to your liking—whether it’s the color, fabric, or details, every piece is made to express your style.
+              </h2> {% endcomment %}
+        </div>
+        <div class="carousel-slide">
+            <img src="{% static 'laptop2.jpeg' %}" alt="Fashion Image 2" style = "object-fit: fill;" loading="lazy">
+  
+
+        </div>
+        <div class="carousel-slide">
+            <img src="{% static 'laptop3.jpeg' %}" alt="Fashion Image 3" loading="lazy">
+    
+
+        </div>
+        <div class="carousel-slide">
+          <img src="{% static 'laptop4.jpeg' %}" alt="Fashion Image 3" loading="lazy" loading="lazy">
+  
+
+      </div>
+      <div class="carousel-slide">
+        <img src="{% static 'laptop5.jpeg' %}" alt="Fashion Image 3" loading="lazy">
+
+    </div>
+    <div class="carousel-slide">
+      <img src="{% static 'laptop6.jpeg' %}" alt="Fashion Image 3" loading="lazy">
+     
+  </div>
+  </div>
+
+  <div id="carousel-phone" class="carousel-phone parent flex justify-center sm:hidden parent" >
+    <div class="carousel-slide-phone child flex items-end justify-center w-[96%] h-[472px] rounded-[8px] bg-cover" style="background-image: url('{% static "landingPage1.jpeg" %}');">
+      <a href = "{% url 'shop' %}" class =" inline-block pl-[5px] mb-[5%] pr-[5px]  w-[101px] h-[25px]  rounded-[11.5px]" style ="background-color: #f0e3ad;">
+        <button class=" flex items-center  justify-start w-full ">     
+          <div class="w-[18px] h-[18px] rounded-full" style = "background-color: #383535;"></div>
+          <p style = "font-size:16px" class = "ml-[13%]">Explore</p>
+        </button>
+      </a>
+    </div>
+<!-- <div class="carousel-slide-phone child h-full w-full">
+  <img src="{% static 'phone1.jpeg' %}" alt="Fashion Image 3">
+
+
+</div>
+<div class="carousel-slide-phone child h-full w-full">
+  <img src="{% static 'phone2.jpeg' %}" alt="Fashion Image 3"  style = "object-fit: fill;">
+
+
+</div>
+<div class="carousel-slide-phone child h-full w-full">
+  <img src="{% static 'phone4.jpeg' %}" alt="Fashion Image 3"  style = "object-fit: fill;">
+
+</div> -->
+</div>
+<div class = "secondRow  flex justify-center mt-[15px] mb-[15px] sm:hidden">
+    <div class = "relative w-[48%] h-[164px] rounded-[8px] mr-[2px] pt-[2%] pb-[2%] pl-[5%] pr-[5%] flex flex-col justify-start" style="background-color: #383535;">
+      <p class = "text-right text-white" style = "font-size:15px">Vasstr</p>
+      <p style = "font-size: 17px; "  class = "text-white font-raleway">You can Customize your look,The way <span class = "inline" style = "color: #7dd181;">you want </span> </p>
+      <div class = "flex items-start justify-start w-[100%] absolute bottom-[4%] left-[8.5%]">
+      <a href = "{% url 'bid_order' %}" class =" inline-block pl-[5px] pr-[5px]  rounded-[11.5px] h-[19px] w-[80px]" style ="background-color: #f0e3ad;">
+      <button class=" flex  items-center justify-start w-full ">     
+        <div class="w-[12px] h-[12px] rounded-full" style = "background-color: #383535;"></div>
+        <p class = "ml-[8%]" style = "font-size:12px">Bid Now</p>
+      </button>
+    </a>
+    </div>
+    </div>
+    <div class = " relative w-[48%] h-[164px] rounded-[8px] bg-cover flex flex-col justify-center items-center" style = "background-image: url('{% static "landingPage2.jpeg" %}');">
+      <div class="absolute w-[100%] h-[164px] bg-black bg-opacity-50 rounded-[8px]"></div>
+      <p style = "font-size: 15px;" class = "relative z-1 text-center font-raleway  text-white">Explore our Exclusive Collection of Designer wear </p>
+      <div class = "flex items-end justify-end w-[100%] z-1 absolute bottom-[4%] right-[5%]">
+      <a href = "{% url 'shop' %}" class ="  rounded-[11.5px] pl-[5px] pr-[5px]  h-[19px] w-[70px]" style ="background-color: #f0e3ad;">
+        <button class=" flex  items-center justify-start w-full ">     
+          <div class=" w-[12px] h-[12px] rounded-full" style = "background-color: #383535;"></div>
+          <p class = "ml-[8%]" style ="font-size: 12px;">Explore</p>
+        </button>
+      </a>
+    </div>
+    </div>
+</div>
+
+  <div class = "thirdRow flex justify-center w-[100%] sm:hidden">
+    <!-- <a href = "{% url 'bid_order' %}" style = "display:block;" class = "w-[96%]"> -->
+      <div class="relative w-[96%] h-[97px] bg-red-500 rounded-[10px] bg-cover"
+    style="background-image: url('{% static "FInd your body type banner image.png" %}'); 
+           background-position: 50% 30%; 
+           background-color: rgba(255, 0, 0, 0.5); 
+           background-blend-mode: multiply;">
+      <div class="absolute w-[100%] h-[97px] bg-black bg-opacity-50 rounded-[8px]"></div>
+      <p style ="font-size:14px" class="relative w-[55%] p-[2%] pl-[5%] z-1 font-raleway text-white mt-[10px]">
+        <span style="font-family: 'Playfair Display', serif;">Discover Your Perfect Fit: </span> 
+        <i>Your Body Type & Shop Tailored Styles</i>
+      </p>      
+      <a href = "#" class =" z-1 inline-block absolute pr-[10px] pl-[5px] bottom-[8px] right-[8px] rounded-[11.5px] " style ="background-color: #f0e3ad;width:145px; height:17.5px">
+        <button class=" flex items-center justify-start w-full ">     
+          <div class=" w-[12px] h-[12px] rounded-full" style = "background-color: #383535;"></div>
+          <p class = "ml-[8%]" style = "font-size: 12px;font-family:serif">Find my Body Type</p>
+        </button>
+      </a>
+    </div>
+  </div>
+
+  
+  
+  <div class="relative w-full overflow-hidden mb-[35px] sm:hidden" id="design-swiper-container">
+    <!-- Swiper Container -->
+    <div class="swiper design-swiper w-[90%] mx-auto pt-[50px] pb-[10px]">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide w-[180px] h-[300px]">
+          <img src="{% static 'Homepage 3x4 image 2.png' %}" alt="Design 1" class="block w-[180px] h-[300px] mx-auto object-cover rounded-[14px] select-none" loading="lazy"/>
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="swiper-slide w-[180px] h-[300px]">
+          <img src="{% static 'Homepage 3x4 images.png' %}" alt="Design 2" class="block w-[180px] h-[300px] mx-auto object-cover rounded-[14px] select-none" loading="lazy"/>
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="swiper-slide w-[180px] h-[300px]">
+          <img src="{% static 'Homepage 3x4 image 3.png' %}" alt="Design 3" class="block w-[180px] h-[300px] mx-auto object-cover rounded-[14px] select-none" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  
+  
+  
+
+
+  <div class = "thirdRow flex justify-center w-[100%] sm:hidden">
+    <!-- <a href = "{% url 'bid_order' %}" style = "display:block;" class = "w-[96%]"> -->
+    <div class = "  relative w-[96%] h-[97px] bg-blue-500 rounded-[10px] bg-cover " style = "background-image: url('{% static "landingPage3.jpeg" %}');">
+      <div class="absolute w-[100%] h-[97px] bg-black bg-opacity-50 rounded-[8px]"></div>
+      <p style ="font-size:14px" class = "relative w-[55%] p-[2%] pl-[5%] z-1  font-raleway text-white">Specify your design requirements and let designers compete to fulfill your vision</p>
+      <a href = "{% url 'bid_order' %}" class =" z-1 inline-block absolute pr-[10px] pl-[5px] bottom-[8px] right-[8px] rounded-[11.5px] " style ="background-color: #f0e3ad;width:82px;height:17.5px">
+        <button class=" flex items-center justify-start w-full ">     
+          <div class=" w-[12px] h-[12px] rounded-full" style = "background-color: #383535;"></div>
+          <p class = "ml-[8%]" style = "font-size: 12px;font-family:serif">Bid Now</p>
+        </button>
+      </a>
+    </div>
+  </div>
+
+
+
+ <div id="carousel-phone" class="carousel-phone parent flex justify-center hidden sm:flex parent" >
+  <div class="carousel-slide-phone child flex items-end justify-center w-[100%]  rounded-[8px] bg-cover" style="aspect-ratio:1440/823;background-image: url('{% static "laptop_landingPage1.jpeg" %}');">
+    <a href = "{% url 'shop' %}" class =" inline-block pl-[5px] mb-[5%] pr-[5px]  w-[140px] h-[45px]  rounded-[30.5px]" style ="background-color: #f0e3ad;">
+      <button class=" flex items-center  justify-start w-full h-full">     
+        <div class="w-[26px] h-[26px] rounded-full" style = "background-color: #383535;"></div>
+        <p style = "font-size:25px" class = "ml-[9%]">Explore</p>
+      </button>
+    </a>
+  </div>
+</div>
+
+<div class = "secondRow  flex justify-center mt-[15px] mb-[15px] hidden sm:flex">
+  <div class = "relative w-[48%] rounded-[8px] mr-[7px] h-[500px] pt-[2%] pb-[2%] pl-[5%] pr-[5%] flex flex-col justify-start" style="background-color: #383535;aspect-ratio:1/1">
+
+    <p style = "font-size: 65px; "  class = "text-white font-raleway">You can Customize your look,The way <span class = "inline" style = "color: #7dd181;">you want </span> </p>
+    <div class = "flex items-start justify-start w-[100%] absolute bottom-[4%] left-[8.5%]">
+    <a href = "{% url 'bid_order' %}" class =" inline-block pl-[5px] pr-[5px]  rounded-[30.5px] h-[35px] w-[124px]" style ="background-color: #f0e3ad;">
+    <button class=" flex  items-center justify-start w-full h-full">     
+      <div class="w-[25px] h-[25px] rounded-full" style = "background-color: #383535;"></div>
+      <p class = "ml-[8%]" style = "font-size:20px">Bid Now</p>
+    </button>
+  </a>
+  </div>
+  </div>
+  <div class = " relative w-[48%] h-[500px] rounded-[8px] bg-cover flex flex-col justify-center items-center" style = " aspect-ratio:1/1;background-image: url('{% static "landingPage2.jpeg" %}');">
+    <div class="absolute w-[100%] h-[500px]  bg-black bg-opacity-50 rounded-[8px]" style = "aspect-ratio:1/1"></div>
+    <p style = "font-size: 45px;" class = "relative z-1 text-center font-raleway  text-white">Explore our Exclusive Collection of Designer wear </p>
+    <div class = "flex items-end justify-end w-[100%] z-1 absolute bottom-[4%] right-[5%]">
+    <a href = "{% url 'shop' %}" class ="  rounded-[30.5px] pl-[5px] pr-[5px]  h-[35px] w-[124px]" style ="background-color: #f0e3ad;">
+      <button class=" flex  items-center justify-start w-full h-full">     
+        <div class=" w-[25px] h-[25px] rounded-full" style = "background-color: #383535;"></div>
+        <p class = "ml-[8%]" style ="font-size: 20px;">Explore</p>
+      </button>
+    </a>
+  </div>
+  </div>
+</div>
+
+<div class = "thirdRow flex justify-center w-[100%] hidden sm:flex">
+  <!-- <a href = "{% url 'bid_order' %}" style = "display:block;" class = "w-[96%]"> -->
+  <div class = "  relative w-[96%] h-[300px] bg-blue-500 rounded-[10px] bg-cover" style = "background-image: url('{% static "FInd your body type banner image.png" %}'); 
+        background-position: 50% 30%;
+        background-color: rgba(255, 0, 0, 0.5); 
+        background-blend-mode: multiply;">
+    <div class="absolute w-[100%] h-[300px] bg-black bg-opacity-30 rounded-[8px]"></div>
+    <p style ="font-size:52px" class = "relative w-[80%] p-[2%] pl-[5%] pt-[5%] z-1  font-raleway text-white"><span style="font-family: 'Playfair Display', serif;">Discover Your Perfect Fit: </span><br>
+      <i>Your Body Type & Shop Tailored Styles</i></p>
+    <a href = "#" class =" z-1 inline-block absolute pr-[10px] pl-[5px] bottom-[16px] right-[8px] rounded-[30.5px] " style ="background-color: #f0e3ad;width:230px;height:35px">
+      <button class=" flex items-center justify-start w-full h-full ">     
+        <div class=" w-[25px] h-[25px] rounded-full" style = "background-color: #383535;"></div>
+        <p class = "ml-[8%]" style = "font-size: 20px;font-family:serif">Find my Body Type</p>
+      </button>
+    </a>
+  </div>
+
+
+</div>
+
+
+<div class="relative w-full overflow-hidden mb-[35px] hidden sm:flex" id="design-swiper-container">
+  <!-- Container for the row of images -->
+  <div class="flex justify-start gap-4 pt-[50px] pb-[10px] w-[96%] mx-auto">
+    <!-- Image 1 -->
+    <div class="w-[33.33%] h-[100vh]">
+      <img src="{% static 'Homepage 3x4 image 2.png' %}" alt="Design 1" class="block w-full h-full object-cover rounded-[14px] select-none" loading="lazy"/>
+    </div>
+
+    <!-- Image 2 -->
+    <div class="w-[33.33%] h-[100vh]">
+      <img src="{% static 'Homepage 3x4 images.png' %}" alt="Design 2" class="block w-full h-full object-cover rounded-[14px] select-none" loading="lazy"/>
+    </div>
+
+    <!-- Image 3 -->
+    <div class="w-[33.33%] h-[100vh]">
+      <img src="{% static 'Homepage 3x4 image 3.png' %}" alt="Design 3" class="block w-full h-full object-cover rounded-[14px] select-none" loading="lazy"/>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="thirdRow flex justify-center w-[100%] hidden sm:flex">
+  <div class="relative w-[96%] h-[300px] bg-blue-500 rounded-[10px] bg-cover" style="background-image: url('{% static "landingPage3.jpeg" %}');">
+    <div class="absolute w-[100%] h-[300px] bg-black bg-opacity-30 rounded-[8px]"></div>
+    <p style="font-size:52px" class="relative w-[80%] p-[2%] pl-[5%] pt-[5%] z-1 font-raleway text-white">Specify your design requirements and let designers compete to fulfill your vision</p>
+    <a href="{% url 'bid_order' %}" class="z-1 inline-block absolute pr-[10px] pl-[5px] bottom-[8px] right-[8px] rounded-[30.5px]" style="background-color: #f0e3ad;width:124px;height:35px">
+      <button class="flex items-center justify-start w-full h-full">     
+        <div class="w-[25px] h-[25px] rounded-full" style="background-color: #383535;"></div>
+        <p class="ml-[8%]" style="font-size: 20px;font-family:serif">Bid Now</p>
+      </button>
+    </a>
+  </div>
+</div>
+
+
+
+
+<div class="relative mt-[30px] mb-[30px] flex w-[100%] h-auto sm:hidden ">
+
+  <h2 class = "absolute left-[38%]" style = "font-size:39px; line-height:1;color:#d86a2f">MEN</h2>
+  <a href = "{% url 'men_category_page' %}" class =" z-3 inline-block  pr-[10px] pl-[5px] absolute right-[0px] top-[10px] rounded-l-[11.5px]  " style = "background-color:#373535;">
+    
+    <button class=" flex items-center justify-start w-full ">       
+      <p  style = "font-size: 14px; color:white;">View more</p>
+    </button> 
+  </a>
+</div>
+
+
+<!--laptop view-->
+<div class="relative mt-[30px] mb-[70px] flex w-[100%] h-auto hidden sm:flex ">
+
+  <h2 class = "absolute left-[44%]" style = "font-size:80px; line-height:1;color:#d86a2f">MEN</h2><br>
+  <a href = "{% url 'men_category_page' %}" class =" z-3 inline-block  pr-[10px] pl-[5px] absolute right-[0px] top-[10px] rounded-l-[25.5px]  " style = "background-color:#373535;">
+    
+    <button class=" flex items-center justify-start w-full ">       
+      <p  style = "font-size: 21px; margin-left:10px;color:white;">View more</p>
+    </button> 
+  </a>
+</div>
+
+<!-- Swiper for Mobile Only (Unchanged) -->
+<div class="relative w-full overflow-hidden mb-[35px] sm:hidden" id="men-swiper-container">
+  <!-- Swiper Container -->
+  <div class="swiper men-swiper w-full pt-[50px] pb-[10px]">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide w-[164px] h-[287px]">
+        <a href="{% url 'shop_products' %}?main_category=Casual Wear&gender=Men">
+          <img src="{% static 'men_category2.jpeg' %}" alt="Nehru Jackets" class="block w-[164px] h-[287px] mx-auto object-cover rounded-[14px] select-none" loading="lazy"/>
+        </a>
+        <p class="text-center mt-2 text-sm font-medium text-gray-700 hidden">Casual Wear</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide w-[164px] h-[287px]">
+        <a href="{% url 'shop_products' %}?main_category=Ethnic Wear&gender=Men">
+          <img src="{% static 'men1.jpeg' %}" alt="Nehru Jackets" class="block mx-auto object-cover w-[164px] h-[287px] rounded-[14px] select-none" loading="lazy"/>
+        </a>
+        <p class="text-center mt-2 text-sm font-medium text-gray-700 hidden">Ethnic Wear</p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide w-[164px] h-[287px]">
+        <a href="{% url 'shop_products' %}?main_category=Jackets&gender=Men">
+          <img src="{% static 'men_category1.jpeg' %}" alt="Nehru Jackets" class="block mx-auto object-cover w-[164px] h-[287px] rounded-[14px] select-none" loading="lazy"/>
+        </a>
+        <p class="text-center mt-2 text-sm font-medium text-gray-700 hidden">Jackets</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic Title Display -->
+  <div id="men-swiper-title" class="text-center text-lg text-black">
+    Nehru Jackets
+  </div>
+</div>
+
+<!-- Static Grid for Laptop View (Aligned + Proper Spacing) -->
+<div class="hidden sm:flex justify-center w-[96%] mx-auto gap-6 mb-[35px]" id="men-grid-container">
+  <!-- Card 1 -->
+  <div class="w-[200px] h-[320px]">
+    <a href="{% url 'shop_products' %}?main_category=Casual Wear&gender=Men">
+      <img src="{% static 'men_category2.jpeg' %}" alt="Casual Wear" class="block w-full h-full object-cover rounded-[14px] select-none" loading="lazy"/>
+    </a>
+    <p class="text-center mt-2 text-3xl font-medium text-gray-700">Casual Wear</p>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="w-[200px] h-[320px]">
+    <a href="{% url 'shop_products' %}?main_category=Ethnic Wear&gender=Men">
+      <img src="{% static 'men1.jpeg' %}" alt="Ethnic Wear" class="block w-full h-full object-cover rounded-[14px] select-none" loading="lazy"/>
+    </a>
+    <p class="text-center mt-2 text-3xl font-medium text-gray-700">Ethnic Wear</p>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="w-[200px] h-[320px]">
+    <a href="{% url 'shop_products' %}?main_category=Jackets&gender=Men">
+      <img src="{% static 'men_category1.jpeg' %}" alt="Jackets" class="block w-full h-full object-cover rounded-[14px] select-none" loading="lazy"/>
+    </a>
+    <p class="text-center mt-2 text-3xl font-medium text-gray-700">Jackets</p>
+  </div>
+</div><br>
+
+
+
+
+
+  <div class="relative  mb-[30px] flex w-[100%] h-auto sm:hidden">
+
+    <h2 class = "absolute left-[29%]" style = "font-size:39px; line-height:1 ; color:#d86a2f">WOMEN</h2>
+    <a href = "{% url 'women_category_page' %}" class =" z-3 inline-block  pr-[10px] pl-[5px] absolute right-[0px] top-[10px] rounded-l-[11.5px]  bg-gray-300 " style = "background-color:#373535; ">
+      <button class=" flex items-center justify-start w-full ">     
+        <p  style = "font-size: 14px;color:white">View more</p>
+      </button> 
+    </a>
+  </div>
+  <!--laptop view-->'
+  <div class="relative  mb-[70px] flex w-[100%] h-auto hidden sm:flex">
+
+    <h2 class = "absolute left-[39%]" style = "font-size:80px; line-height:1 ; color:#d86a2f">WOMEN</h2><br>
+    <a href = "{% url 'women_category_page' %}" class =" z-3 inline-block  pr-[10px] pl-[5px] absolute right-[0px] top-[10px] rounded-l-[25.5px]  bg-gray-300 " style = "background-color:#373535; ">
+      <button class=" flex items-center justify-start w-full ">     
+        <p  style = "font-size: 21px;color:white">View more</p>
+      </button> 
+    </a>
+  </div>
+
+
+    <!-- Swiper for Mobile Only (Unchanged) -->
+<div class="relative w-full overflow-hidden mb-[50px] sm:hidden" id="women-swiper-container">
+  <!-- Swiper Container -->
+  <div class="swiper women-swiper w-full pt-[50px] pb-[10px]">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide w-[164px] h-[287px]">
+        <a href="{% url 'shop_products' %}?main_category=Indo Western&gender=Women">
+          <img src="{% static 'women_category5.jpeg' %}" alt="Indo Western" class="block w-[164px] h-[287px] mx-auto object-cover rounded-[14px] select-none" loading="lazy"/>
+        </a>
+        <p class="text-center mt-2 text-sm font-medium text-gray-700 hidden">Indo Western</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide w-[164px] h-[287px]">
+        <a href="{% url 'shop_products' %}?main_category=Kurtis&gender=Women">
+          <img src="{% static 'women_kurtis.jpeg' %}" alt="Kurtis" class="block mx-auto object-cover w-[164px] h-[287px] rounded-[14px] select-none" loading="lazy"/>
+        </a>
+        <p class="text-center mt-2 text-sm font-medium text-gray-700 hidden">Kurtis</p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide w-[164px] h-[287px]">
+        <a href="{% url 'shop_products' %}?main_category=Ethnic-Wear&gender=Women">
+          <img src="{% static 'women_category4.jpeg' %}" alt="Ethnic Wear" class="block mx-auto object-cover w-[164px] h-[287px] rounded-[14px] select-none" loading="lazy"/>
+        </a>
+        <p class="text-center mt-2 text-sm font-medium text-gray-700 hidden">Ethnic Wear</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic Title Display -->
+  <div id="women-swiper-title" class="text-center text-lg text-black">
+    Indo Western
+  </div>
+</div>
+
+<!-- Static Grid for Laptop View (Aligned + Proper Spacing) -->
+<div class="hidden sm:flex justify-center w-[96%] mx-auto gap-6 mb-[50px]" id="women-grid-container">
+  <!-- Card 1 -->
+  <div class="w-[200px] h-[320px]">
+    <a href="{% url 'shop_products' %}?main_category=Indo Western&gender=Women">
+      <img src="{% static 'women_category5.jpeg' %}" alt="Indo Western" class="block w-full h-full object-cover rounded-[14px] select-none" loading="lazy"/>
+    </a>
+    <p class="text-center mt-2 text-3xl font-medium text-gray-700">Indo Western</p>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="w-[200px] h-[320px]">
+    <a href="{% url 'shop_products' %}?main_category=Kurtis&gender=Women">
+      <img src="{% static 'women_kurtis.jpeg' %}" alt="Kurtis" class="block w-full h-full object-cover rounded-[14px] select-none" loading="lazy"/>
+    </a>
+    <p class="text-center mt-2 text-3xl font-medium text-gray-700">Kurtis</p>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="w-[200px] h-[320px]">
+    <a href="{% url 'shop_products' %}?main_category=Ethnic-Wear&gender=Women">
+      <img src="{% static 'women_category4.jpeg' %}" alt="Ethnic Wear" class="block w-full h-full object-cover rounded-[14px] select-none" loading="lazy"/>
+    </a>
+    <p class="text-center mt-2 text-3xl font-medium text-gray-700">Ethnic Wear</p>
+  </div>
+</div>
+
+
+    <!-- Swiper Pagination -->
+    
+  </div>
+</div>
+
+
+{% endblock body %}
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="{% static 'js/landing_page.js' %}"></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  function setupSwiper(swiperClass, titleId) {
+    const titleDisplay = titleId ? document.getElementById(titleId) : null;
+
+    new Swiper(swiperClass, {
+      effect: "coverflow",
+      centeredSlides: true,
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      initialSlide: 1,
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 30,
+        depth: 200,
+        modifier: 1,
+        slideShadows: false,
+      },
+      on: {
+        init: function () {
+          if (titleDisplay) {
+            const activeSlide = this.slides[this.activeIndex];
+            const titleText = activeSlide.querySelector(".text-center")?.textContent || "";
+            titleDisplay.textContent = titleText;
+          }
+        },
+        slideChange: function () {
+          if (titleDisplay) {
+            const activeSlide = this.slides[this.activeIndex];
+            const titleText = activeSlide.querySelector(".text-center")?.textContent || "";
+            titleDisplay.textContent = titleText;
+          }
+        },
+      },
+    });
+  }
+
+  // Initialize Men and Women Swipers
+  setupSwiper(".men-swiper", "men-swiper-title");
+  setupSwiper(".women-swiper", "women-swiper-title");
+
+  // Separate setup for Design Swiper with different configurations
+  new Swiper(".design-swiper", {
+    effect: "coverflow",
+    centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: -100, // Increase spacing for wider images
+    initialSlide: 1,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 50, // Increase stretch for a wider look
+      depth: 250,
+      modifier: 1,
+      slideShadows: false,
+    },
+  });
+});
+
+
+</script>
+
+{% endblock script %}

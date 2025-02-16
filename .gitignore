@@ -1,6 +1,46 @@
-*.pyc
-/CSS/__pycache__
-/CSS/__pycache__
-/CSS/__pycache__
-/CssBetterment/__pycache__
-/CssBetterment/__pycache__
+# Python bytecode and cache files
+*.py[cod]
+__pycache__/
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Django stuff:
+db.sqlite3
+*.log
+local_settings.py
+media
+
+# Virtual Environment
+venv/
+env/
+.venv/
+.env/
+
+# Node modules (if using npm)
+node_modules/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+.DS_Store
+Thumbs.db

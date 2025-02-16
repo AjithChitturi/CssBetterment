@@ -1,0 +1,23 @@
+{
+  "name": "css",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx tailwindcss -i ./CssBetterment/static/css/tailwind.css -o ./CssBetterment/static/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefix": "^1.0.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "css": "file:",
+    "user_dev": "file:"
+  },
+  "description": ""
+}
